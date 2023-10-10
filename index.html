@@ -122,13 +122,22 @@ span {
             const techCost = techHours * 180;
             const appCost = appHours * 75;
             const TotalCost = techCost + appCost + subbieCost + materialCost + otherCost;
-            const gpPercentage = ((quoteTotal - quoteVariance) / quoteTotal) * 100;
-            const quoteVariation = quoteTotal - (quoteVariance / 0.3)
+            const gpPercentage = ((quoteTotal - TotalCost) / quoteTotal) * 100;
+            const quoteVariation = quoteTotal - (TotalCost / 0.3)
 
+            
+        }
             // Update the result elements
             document.getElementById('techCost').textContent = techCost.toFixed(2);
             document.getElementById('appCost').textContent = appCost.toFixed(2);
             document.getElementById('gpPercentage').textContent = isNaN(gpPercentage) ? '0.00' : gpPercentage.toFixed(2);
+            const gpMessage = document.getElementById('gpMessage');
+            if (gpPercentage < 70) {
+                gpMessage.textContent = 'Warning: GP % is less than 70%.';
+            } else {
+                gpMessage.textContent = ''; // Clear the message if GP % is 70% or higher
+            }
+        
         }
 
         // Add input event listeners to trigger calculations
