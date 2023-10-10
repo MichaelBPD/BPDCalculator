@@ -131,7 +131,7 @@ span {
             document.getElementById('gpPercentage').textContent = isNaN(gpPercentage) ? '0.00' : gpPercentage.toFixed(2);
             const gpMessage = document.getElementById('gpMessage');
             if (gpPercentage < 70) {
-                gpMessage.textContent = 'Change quoted price to' + quoteVariation.toFixed(2) + ' for 70% GP;
+                gpMessage.textContent = 'Change quoted price to ' + quoteVariation.toFixed(2) + ' for 70% GP';
             } else {
                 gpMessage.textContent = ''; // Clear the message if GP % is 70% or higher
             }
