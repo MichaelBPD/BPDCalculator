@@ -123,7 +123,7 @@ span {
             const appCost = appHours * 75;
             const TotalCost = techCost + appCost + subbieCost + materialCost + otherCost;
             const gpPercentage = ((quoteTotal - TotalCost) / quoteTotal) * 100;
-            const quoteVariation = (TotalCost / 0.3) - quoteTotal;
+            const quoteVariation = (TotalCost / 0.3);
 
             // Update the result elements
             document.getElementById('techCost').textContent = techCost.toFixed(2);
@@ -131,7 +131,7 @@ span {
             document.getElementById('gpPercentage').textContent = isNaN(gpPercentage) ? '0.00' : gpPercentage.toFixed(2);
             const gpMessage = document.getElementById('gpMessage');
             if (gpPercentage < 70) {
-                gpMessage.textContent = 'Add ' + quoteVariation.toFixed(2) + ' to quoted price for 70% GP;
+                gpMessage.textContent = 'Change quoted price to' + quoteVariation.toFixed(2) + ' for 70% GP;
             } else {
                 gpMessage.textContent = ''; // Clear the message if GP % is 70% or higher
             }
