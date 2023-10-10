@@ -123,7 +123,7 @@ span {
             const appCost = appHours * 75;
             const TotalCost = techCost + appCost + subbieCost + materialCost + otherCost;
             const gpPercentage = ((quoteTotal - TotalCost) / quoteTotal) * 100;
-            const quoteVariation = quoteTotal - (TotalCost / 0.3);
+            const quoteVariation = (TotalCost / 0.3) - quoteTotal;
 
             // Update the result elements
             document.getElementById('techCost').textContent = techCost.toFixed(2);
