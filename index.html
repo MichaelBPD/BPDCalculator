@@ -31,16 +31,16 @@ label {
     margin-bottom: 5px;
     color: #555;
 }
-
+        
 input[type="number"] {
-    width: 100%;
-    padding: 8px 12px; /* Increase the right padding for spacing */
+    width: 100%; /* Make the input fields span the full width of the container */
+    padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 16px;
-}
-
+    box-sizing: border-box; /* Include padding and border in the total width */
+    
 button {
     display: block;
     width: 100%;
