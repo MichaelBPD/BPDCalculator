@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quote Calculator</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Quote Calculator</h1>
+    <form>
+        <label for="quoteTotal">Quote Total:</label>
+        <input type="number" id="quoteTotal" required><br>
+
+        <label for="techHours">Technician Hours:</label>
+        <input type="number" id="techHours" required><br>
+
+        <label for="apprenticeHours">Apprentice Hours:</label>
+        <input type="number" id="apprenticeHours" required><br>
+
+        <label for="subbieCost">Subbie Cost:</label>
+        <input type="number" id="subbieCost" required><br>
+
+        <label for="materialCost">Material Cost:</label>
+        <input type="number" id="materialCost" required><br>
+
+        <label for="otherCost">Other Cost:</label>
+        <input type="number" id="otherCost" required><br>
+
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+
+    <h2>Results:</h2>
+    <p>Technician Cost: <span id="techCost">0</span></p>
+    <p>Apprentice Cost: <span id="appCost">0</span></p>
+    <p>GP %: <span id="gpPercentage">0</span>%</p>
+
+    <script>
+        function calculate() {
+            // Get values from input fields
+            const quoteTotal = parseFloat(document.getElementById('quoteTotal').value);
+            const techHours = parseFloat(document.getElementById('techHours').value);
+            const appHours = parseFloat(document.getElementById('apprenticeHours').value);
+            const subbieCost = parseFloat(document.getElementById('subbieCost').value);
+            const materialCost = parseFloat(document.getElementById('materialCost').value);
+            const otherCost = parseFloat(document.getElementById('otherCost').value);
+
+            // Calculate Technician Cost, Apprentice Cost, and GP Percentage
+            const techCost = techHours * 185;
+            const appCost = appHours * 75;
+            const gpPercentage = ((quoteTotal - techCost - appCost - subbieCost - materialCost - otherCost) / quoteTotal) * 100;
+
+            // Update the result elements
+            document.getElementById('techCost').textContent = techCost.toFixed(2);
+            document.getElementById('appCost').textContent = appCost.toFixed(2);
+            document.getElementById('gpPercentage').textContent = gpPercentage.toFixed(2);
+        }
+    </script>
+</body>
+</html>
