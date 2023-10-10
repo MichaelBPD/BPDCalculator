@@ -105,6 +105,7 @@ span {
     <p>Technician Cost: <span id="techCost">0.00</span></p>
     <p>Apprentice Cost: <span id="appCost">0.00</span></p>
     <p>GP %: <span id="gpPercentage">0.00</span>%</p>
+    <p id="gpMessage">Add <span id="quoteVariation">0.00</span></p>
 
     <script>
         // Function to calculate the results
@@ -120,7 +121,9 @@ span {
             // Calculate Technician Cost, Apprentice Cost, and GP Percentage
             const techCost = techHours * 180;
             const appCost = appHours * 75;
-            const gpPercentage = ((quoteTotal - techCost - appCost - subbieCost - materialCost - otherCost) / quoteTotal) * 100;
+            const TotalCost = techCost + appCost + subbieCost + materialCost + otherCost;
+            const gpPercentage = ((quoteTotal - quoteVariance) / quoteTotal) * 100;
+            const quoteVariation = quoteTotal - (quoteVariance / 0.3)
 
             // Update the result elements
             document.getElementById('techCost').textContent = techCost.toFixed(2);
