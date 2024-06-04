@@ -179,10 +179,41 @@
             // Calculate Technician Cost, Apprentice Cost, and GP Percentage
             const techCost = techHours * 195;
             const appCost = appHours * 135;
-            const TotalCost = techCost + appCost + subbieCost + materialCost + otherCost;
+
+            let adjustedMaterialCost = materialCost;
+            if (materialCost > 505) {
+                adjustedMaterialCost = materialCost * 0.39;
+            } else if (materialCost > 255) {
+                adjustedMaterialCost = materialCost * 0.486;
+            } else if (materialCost > 105) {
+                adjustedMaterialCost = materialCost * 0.54;
+            } else if (materialCost > 55) {
+                adjustedMaterialCost = materialCost * 0.66;
+            } else if (materialCost > 30) {
+                adjustedMaterialCost = materialCost * 0.681;
+            } else {
+                adjustedMaterialCost = materialCost * 0.9;
+            }
+
+            let adjustedSubbieCost = subbieCost;
+            if (subbieCost > 505) {
+                adjustedSubbieCost = subbieCost * 0.39;
+            } else if (subbieCost > 255) {
+                adjustedSubbieCost = subbieCost * 0.486;
+            } else if (subbieCost > 105) {
+                adjustedSubbieCost = subbieCost * 0.54;
+            } else if (subbieCost > 55) {
+                adjustedSubbieCost = subbieCost * 0.66;
+            } else if (subbieCost > 30) {
+                adjustedSubbieCost = subbieCost * 0.681;
+            } else {
+                adjustedSubbieCost = subbieCost * 0.9;
+            }
+
+            const TotalCost = techCost + appCost + adjustedSubbieCost + adjustedMaterialCost + otherCost;
             const gpPercentage = ((quoteTotal - TotalCost) / quoteTotal) * 100;
             const quoteVariation = (TotalCost / 0.3);
-
+     
             // Update the result elements
             document.getElementById('gpPercentage').textContent = isNaN(gpPercentage) ? '0.00' : gpPercentage.toFixed(2);
             const gpMessage = document.getElementById('gpMessage');
