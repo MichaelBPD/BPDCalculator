@@ -177,37 +177,37 @@
             const otherCost = parseFloat(document.getElementById('otherCost').value) || 0;
     
             // Calculate Technician Cost, Apprentice Cost, and GP Percentage
-            const techCost = techHours * 195;
+            const techCost = techHours * 214.5;
             const appCost = appHours * 135;
 
             let adjustedMaterialCost = materialCost;
-            if (materialCost > 505) {
+            if (materialCost > 1000) {
                 adjustedMaterialCost = materialCost * 0.39;
-            } else if (materialCost > 255) {
+            } else if (materialCost > 500) {
                 adjustedMaterialCost = materialCost * 0.486;
-            } else if (materialCost > 105) {
+            } else if (materialCost > 250) {
                 adjustedMaterialCost = materialCost * 0.54;
-            } else if (materialCost > 55) {
-                adjustedMaterialCost = materialCost * 0.66;
-            } else if (materialCost > 30) {
-                adjustedMaterialCost = materialCost * 0.681;
-            } else {
+            } else if (materialCost > 100) {
                 adjustedMaterialCost = materialCost * 0.9;
+            } else if (materialCost > 30) {
+                adjustedMaterialCost = materialCost * 1.05;
+            } else {
+                adjustedMaterialCost = materialCost * 1.2;
             }
 
             let adjustedSubbieCost = subbieCost;
-            if (subbieCost > 505) {
+            if (subbieCost > 1000) {
                 adjustedSubbieCost = subbieCost * 0.39;
-            } else if (subbieCost > 255) {
+            } else if (subbieCost > 500) {
                 adjustedSubbieCost = subbieCost * 0.486;
-            } else if (subbieCost > 105) {
+            } else if (subbieCost > 250) {
                 adjustedSubbieCost = subbieCost * 0.54;
-            } else if (subbieCost > 55) {
-                adjustedSubbieCost = subbieCost * 0.66;
-            } else if (subbieCost > 30) {
-                adjustedSubbieCost = subbieCost * 0.681;
-            } else {
+            } else if (subbieCost > 100) {
                 adjustedSubbieCost = subbieCost * 0.9;
+            } else if (subbieCost > 30) {
+                adjustedSubbieCost = subbieCost * 1.05;
+            } else {
+                adjustedSubbieCost = subbieCost * 1.2;
             }
 
             const TotalCost = techCost + appCost + adjustedSubbieCost + adjustedMaterialCost + otherCost;
