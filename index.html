@@ -211,14 +211,14 @@
             }
 
             const TotalCost = techCost + appCost + adjustedSubbieCost + adjustedMaterialCost + otherCost;
-            const gpPercentage = ((quoteTotal - TotalCost) / quoteTotal) * 100;
-            const quoteVariation = (TotalCost / 0.25);
+            //const gpPercentage = ((quoteTotal - TotalCost) / quoteTotal) * 100;
+            const quoteVariation = (TotalCost / 0.28);
      
             // Update the result elements
             document.getElementById('gpPercentage').textContent = isNaN(gpPercentage) ? '0.00' : gpPercentage.toFixed(2);
             const gpMessage = document.getElementById('gpMessage');
             if (gpPercentage < 75) {
-                gpMessage.innerHTML = 'Change quoted price to $<span class="quote-variation">' + Math.ceil(quoteVariation) + '</span> for 75% GP';
+                gpMessage.innerHTML = 'Change quoted price to $<span class="quote-variation">' + Math.ceil(quoteVariation) + '</span> to be priced correctly.';
             } else {
                 gpMessage.textContent = ''; // Clear the message if GP % is 65% or higher
             }
