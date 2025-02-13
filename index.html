@@ -152,7 +152,7 @@
                 <div class="container">
                     <div class="left-column">
                         <h2>Results:</h2>
-
+                        <p><span id="gpPercentage"></span>%</p>
                         <p id="gpMessage"></p>
                     </div>
                     <div class="right-column">
@@ -221,7 +221,7 @@
             if (gpPercentage < 72) {
                 gpMessage.innerHTML = 'Change quoted price to $<span class="quote-variation">' + Math.ceil(quoteVariation) + '</span> to be priced correctly.';
             } else {
-                gpMessage.textContent = 'Quoted price correctly'; // Clear the message if GP % is 65% or higher
+                gpMessage.innerHTML = 'Quoted price correctly'; // Clear the message if GP % is 65% or higher
             }
         }
     
