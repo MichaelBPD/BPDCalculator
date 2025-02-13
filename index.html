@@ -218,10 +218,10 @@
             // Update the result elements
             document.getElementById('gpPercentage').textContent = isNaN(gpPercentage) ? '0.00' : gpPercentage.toFixed(2);
             const gpMessage = document.getElementById('gpMessage');
-            if (gpPercentage < 75) {
+            if (gpPercentage < 72) {
                 gpMessage.innerHTML = 'Change quoted price to $<span class="quote-variation">' + Math.ceil(quoteVariation) + '</span> to be priced correctly.';
             } else {
-                gpMessage.textContent = ''; // Clear the message if GP % is 65% or higher
+                gpMessage.textContent = 'Quoted price correctly'; // Clear the message if GP % is 65% or higher
             }
         }
     
