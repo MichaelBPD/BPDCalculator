@@ -215,8 +215,8 @@
             */
 
             const TotalCost = techCost + appCost + adjustedSubbieCost + ((adjustedMaterialCost + otherCost) * 1.05);
-            const gpPercentage = ((quoteTotal - TotalCost) / quoteTotal) * 100;
-            const quoteVariation = (TotalCost / (1 - (gpTarget / 100)));
+            const gpPercentage = (((quoteTotal - TotalCost) / quoteTotal) * MarkupPerc) * 100;
+            const quoteVariation = (TotalCost / (1 - (gpTarget / 100)) * MarkupPerc);
      
             // Update the result elements
             //document.getElementById('gpPercentage').textContent = isNaN(gpPercentage) ? '0.00' : gpPercentage.toFixed(2);
