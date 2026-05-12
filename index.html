@@ -216,7 +216,7 @@
             */
 
             const TotalCost = techCost + appCost + adjustedSubbieCost + ((adjustedMaterialCost + otherCost) * 1.05);
-            const gpPercentage = (((quoteTotal - (TotalCost * MarkupPerc) / quoteTotal)) * 100;
+            const gpPercentage = (((quoteTotal - (TotalCost) * MarkupPerc) / quoteTotal)) * 100;
             const quoteVariation = (TotalCost / (1 - (gpTarget / 100)) * MarkupPerc);
      
             // Update the result elements
