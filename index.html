@@ -226,14 +226,15 @@
             // Update the result elements
             //document.getElementById('gpPercentage').textContent = isNaN(gpPercentage) ? '0.00' : gpPercentage.toFixed(2);
             const gpMessage = document.getElementById('gpMessage');
-/*
+
+     
             if (gpPercentage < gpTarget) {
-                gpMessage.innerHTML = 'Current GP calculated $<span class="quote-variation">' + gpPercentage.toFixed(1) + '%</span><br>Change quoted price to $<span class="quote-variation">' + Math.ceil(quoteVariation) + '</span> to be priced correctly.';
+                gpMessage.innerHTML = 'Current GP calculated $<span class="quote-variation">' + gpPercentage.toFixed(1) /* + '%</span><br>Change quoted price to $<span class="quote-variation">' + Math.ceil(quoteVariation) + '</span> to be priced correctly.'*/;
             } else {
-                gpMessage.innerHTML = 'Current GP calculated $<span class="quote-variation">' + gpPercentage.toFixed(1) + '%</span><br>Quoted price correctly'; // Clear the message if GP % is 65% or higher
+                gpMessage.innerHTML = 'Current GP calculated $<span class="quote-variation">' + gpPercentage.toFixed(1) /*+ '%</span><br>Quoted price correctly'*/; // Clear the message if GP % is 65% or higher
             }
         }
-*/    
+  
 
         // Only set up the event listeners if the password was correct
         if (document.getElementById('techHours')) {
