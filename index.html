@@ -61,6 +61,16 @@
         font-size: 16px;
         box-sizing: border-box; /* Include padding and border in the total width */
     }
+  
+    input[type="text"] {
+        width: 100%; /* Make the input fields span the full width of the container */
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+        box-sizing: border-box; /* Include padding and border in the total width */
+    }
     
     button {
         display: block;
@@ -130,6 +140,9 @@
             document.body.innerHTML = `
                 <h1>Quote Calculator</h1>
                 <form>
+                    <label for="estName">Estimate Name:</label>
+                    <input type="text" id="estName"><br>
+
                     <label for="techHours">Plumber/Roofer Hours:</label>
                     <input type="number" id="techHours"><br>
 
@@ -179,8 +192,8 @@
             const otherCost = parseFloat(document.getElementById('otherCost').value) || 0;
     
             // Calculate Technician Cost, Apprentice Cost, and GP Percentage
-            const techCost = techHours * 228;
-            const appCost = appHours * 150;
+            const techCost = techHours * 228 / MarkupPerc;
+            const appCost = appHours * 150 / MarkupPerc;
 
             let adjustedMaterialCost = materialCost;
             if (materialCost > 1000) {
